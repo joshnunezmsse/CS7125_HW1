@@ -1,16 +1,16 @@
 # PART 1 RESULTS
-The below results are produced running a simulation with :
-* 2 Datacenters
-    * 1 Host per datacenter
-        * Host : 2GB Ram, 1 CPU x 1000 MIPS, 10000 BW
+A simulation was run and produced the results below using :
+* 2 Data centers
+    * 1 Host per data center
+        * Each host : 2GB RAM, 1 CPU x 1000 MIPS, 10000 BW
 * 2 VMs
-    * VM #1 with 10 MIP capacity
-    * VM #2 with 1000 MIP capacity
+    * VM #1 with 10 MIPS capacity
+    * VM #2 with 1000 MIPS capacity
 * 4 Cloudlets
 
-VM #1 fails to be created on Datacenter0 because there are not enough MIPS left on the single host in Datacetner0 after the allocation of VM #0.  Datacenter0's host only has a 1000 MIPS and 10 of them have been used by VM #0 leaving only 900 left when VM #1 which needs 1000 MIPS starts spin up.
+Notice in the output that the run of Cloudlets on Datacenter 2 takes 100 times longer than on Datacenter 3.  This occurs because the VM available in Datacenter 2 only has a 10 MIPS capacity while the VM on Datacenter 3 has a 1000 MIPS capacity.
 
-Then in the output you can see that the run of the Cloudlets on Datacenter 2 take 100 times longer than on Datacenter 3.  This is because the VM available in Datacenter 2 only have 10 MIPs capacity while the VM on Datacenter 3 has 1000 MIPs capacity.
+VM #1 fails to be created on Datacenter0 because there is not enough MIPS left on the single host in Datacenter0 after the allocation of VM #0.  Datacenter0's host only has a 1000 MIPS, and 10 of them have been used by VM #0, leaving only 990 MIPS.  VM #1 needs 1000 MIPS, but only 990 are left, so VM #1 allocation fails.
 
 ```
 Initialising...
