@@ -41,6 +41,7 @@ public class main {
     static int nextBrokerNumber = 0;
     static int nextDatacenterNumber = 0;
     static int nextVMId = 0;
+    static int nextCloudletId = 0;
     
     public static void main(String[] args) {
         CloudSim.init(1, Calendar.getInstance(), false);
@@ -99,7 +100,7 @@ public class main {
     
     private static Cloudlet createCloudlet(int brokerId, int vmId, UtilizationModel model) {
         Cloudlet retVal = new Cloudlet(
-                                0,
+                                nextCloudletId++,
                                 400000,
                                 1,
                                 300,
