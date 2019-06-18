@@ -40,6 +40,7 @@ import org.cloudbus.cloudsim.provisioners.RamProvisionerSimple;
 public class main {
     static int nextBrokerNumber = 0;
     static int nextDatacenterNumber = 0;
+    static int nextVMId = 0;
     
     public static void main(String[] args) {
         CloudSim.init(1, Calendar.getInstance(), false);
@@ -60,7 +61,6 @@ public class main {
         broker1.submitCloudletList(cl1);
         
         //setup second datacenter
-        //Map<String, String> vm2Options = new HashMap<String, String>() {{ put("mips", "10"); }};
         Vm vm2 = createVM(broker2.getId(), new HashMap<>(), new CloudletSchedulerTimeShared());
         ArrayList<Cloudlet> cl2 = new ArrayList<>();
         cl2.add(createCloudlet(broker2.getId(), vm2.getId(), new UtilizationModelFull()));
@@ -85,7 +85,7 @@ public class main {
         }
         
         return new Vm(
-            0,
+            nextVMId++,
             brokerId,
             mips,
             1,
