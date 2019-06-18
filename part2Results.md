@@ -1,4 +1,12 @@
-The below results show...
+The below results are produced running a simulation with:
+* 1 Datacenter
+    * 1 Host : 64 GB Ram, 1 CPU x 10000 MIPS
+* 40 VMs : with 1 CPU x 1000 MIPS
+* 80 Cloudlets
+
+10 of the 40 requested VMs are created because there is enough resources available for them (RAM, MIPS, Bandwidth).  Starting with VM #10 the BandWidth (BW) capacity of the datacenter has been exhausted so no more VMs can be created.
+
+All of the cloudlets run in the same amount of time because the VMs all have the same specs.  The Cloudlets are devided between the 10 allocated VMs in a round robin fashion.
 
 ```
 Initialising...

@@ -1,6 +1,7 @@
 The below results are produced running a simulation with :
 * 2 Datacenters
     * 1 Host per datacenter
+        * Host : 2GB Ram, 1 CPU x 1000 MIPS, 10000 BW
 * 2 VMs
     * VM #1 with 10 MIP capacity
     * VM #2 with 1000 MIP capacity
